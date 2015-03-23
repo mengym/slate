@@ -2,13 +2,10 @@
 title: API Reference
 
 language_tabs:
-  - shell
-  - ruby
-  - python
-
+  - json
+  - 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by Slate</a>
+  - <a href='http://github.com/tripit/slate'>Documentation Powered by AA 租车</a>
 
 includes:
   - errors
@@ -16,7 +13,7 @@ includes:
 search: true
 ---
 
-# Introduction
+# 简介
 
 Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
 
