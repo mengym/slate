@@ -5,7 +5,7 @@ language_tabs:
   - json
   - 
 toc_footers:
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by AA 租车</a>
+  - <a href='http://www.aayongche.com'>Documentation Powered by AA 租车</a>
 
 includes:
   - errors
@@ -13,7 +13,7 @@ includes:
 search: true
 ---
 
-# 简介2
+# 简介
 
 欢迎使用AA租车系统API说明文档
 
@@ -25,7 +25,7 @@ Content-type : application/json
 
 ## 权限查询接口
 
-> 返回JSON结果示例::
+> 返回JSON结果示例:
 
 ```json
 {
@@ -43,12 +43,10 @@ Content-type : application/json
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+请求参数 | 类型 | 必填? | 描述
+--------- | ------- | ------- | -----------
+id | int | true | 用户的ID
 
 <aside class="notice">
-当传递参数有误,用户ID为空或者用户已经被禁用等情况,返回值将为空.
+当传递参数有误,id为空或者用户已经被禁用等情况,返回值中result将为空.
 </aside>
-
