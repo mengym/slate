@@ -13,7 +13,7 @@ includes:
 search: true
 ---
 
-# 简介
+# 简介2
 
 欢迎使用AA租车系统API说明文档
 
@@ -21,20 +21,22 @@ search: true
 
 # 综合查询接口
 
+> Content-type : application/json
+
 ## 权限查询接口
 
 ```json
-
-请求示例代码
-
+GET /pivilege/user/{id}
 ```
 
-> The above command returns JSON structured like this:
+> 返回JSON结果示例::
 
 ```json
-
-返回JSON结果示例
-
+{
+  "code": 0,
+  "result":{
+  }
+}
 ```
 
 根据管理员ID，获取其所对应的所有权限信息。
