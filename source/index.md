@@ -25,10 +25,6 @@ search: true
 
 ## 权限查询接口
 
-```json
-GET /pivilege/user/{id}
-```
-
 > 返回JSON结果示例::
 
 ```json
@@ -43,7 +39,7 @@ GET /pivilege/user/{id}
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`GET /privilege/user/{id}`
 
 ### Query Parameters
 
