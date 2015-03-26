@@ -21,7 +21,7 @@ search: true
 
 # 综合查询接口
 
-> Content-type : application/json
+Content-type : application/json
 
 ## 权限查询接口
 
