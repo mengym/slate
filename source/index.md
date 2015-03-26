@@ -21,8 +21,6 @@ search: true
 
 # 综合查询接口
 
-Content-type : application/json
-
 ## 权限查询接口
 
 > 返回JSON结果示例:
@@ -40,6 +38,10 @@ Content-type : application/json
 ### HTTP Request
 
 `GET /privilege/user/{id}`
+
+### Content-type
+
+`application/json`
 
 ### Query Parameters
 
