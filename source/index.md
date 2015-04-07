@@ -25,6 +25,7 @@ search: true
 
 > 返回JSON结果示例:
 
+
 ```json
 {
   "code": 1,
@@ -101,6 +102,7 @@ search: true
 }
 ```
 
+
 根据管理员ID，获取其所对应的所有权限信息。
 
 ### HTTP Request
@@ -114,7 +116,7 @@ search: true
 ### Query Parameters
 
 请求参数 | 类型 | 必填? | 描述
---------- | ------- | ------- | -----------
+-------- | ---- | ----- | ----
 id | Int | true | 用户的ID
 
 <aside class="notice">
