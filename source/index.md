@@ -27,8 +27,76 @@ search: true
 
 ```json
 {
-  "code": 0,
-  "result":{
+  "code": 1,
+  "msg": "",
+  "manager": {
+    "user_id": 1,
+    "user_name": "张三",
+    "city_code": [
+      "010",
+      "021"
+    ],
+    "mail": "example@aayongche.com",
+    "phone": "13xxxxxxxxx",
+    "status": 1,
+    "role": {
+      "role_key": "role_key",
+      "role_name": "城市经理",
+      "role_desc": "角色描述",
+      "is_default": 1,
+      "privilege_group": [
+        {
+          "privilege_group_key": "privilege_group_key",
+          "group_name": "privilege_group_name",
+          "privilege": [
+            {
+              "privilege_id": 1,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/a",
+              "method": "get"
+            },
+            {
+              "privilege_id": 2,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/b",
+              "method": "post"
+            },
+            {
+              "privilege_id": 3,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/c",
+              "method": "export"
+            },
+            {"...": "..."}
+          ]
+        },
+        {
+          "privilege_group_key": "privilege_group_key",
+          "group_name": "privilege_group_name",
+          "privilege": [
+            {
+              "privilege_id": 1,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/a",
+              "method": "get"
+            },
+            {
+              "privilege_id": 2,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/b",
+              "method": "post"
+            },
+            {
+              "privilege_id": 3,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/c",
+              "method": "export"
+            },
+            {"...": "..."}
+          ]
+        }
+      ]
+    }
   }
 }
 ```
@@ -47,7 +115,7 @@ search: true
 
 请求参数 | 类型 | 必填? | 描述
 --------- | ------- | ------- | -----------
-id | int | true | 用户的ID
+id | Int | true | 用户的ID
 
 <aside class="notice">
 当传递参数有误,id为空或者用户已经被禁用等情况,返回值中result将为空.
