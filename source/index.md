@@ -5,7 +5,7 @@ language_tabs:
   - json
   - 
 toc_footers:
-  - <a href='http://github.com/tripit/slate'>Documentation Powered by AA 租车</a>
+  - <a href='http://www.aayongche.com'>Documentation Powered by AA 租车</a>
 
 includes:
   - errors
@@ -15,89 +15,110 @@ search: true
 
 # 简介
 
-欢迎使用AA租车系统API说明文档
+欢迎使用AA租车后台业务系统API说明文档
 
-该API系统包含，APP接口，内部业务接口，事件接口，以及各种综合查询接口。
+该API系统包含，综合查询数据接口，内部业务接口，事件接口等。
 
 # 综合查询接口
 
 ## 权限查询接口
 
-```json
+> 返回JSON结果示例:
 
-请求示例代码
-
-```
-
-> The above command returns JSON structured like this:
 
 ```json
-
-返回JSON结果示例
-
+{
+  "code": 1,
+  "msg": "",
+  "manager": {
+    "user_id": 1,
+    "user_name": "张三",
+    "city_code": [
+      "010",
+      "021"
+    ],
+    "mail": "example@aayongche.com",
+    "phone": "13xxxxxxxxx",
+    "status": 1,
+    "role": {
+      "role_key": "role_key",
+      "role_name": "城市经理",
+      "role_desc": "角色描述",
+      "is_default": 1,
+      "privilege_group": [
+        {
+          "privilege_group_key": "privilege_group_key",
+          "group_name": "privilege_group_name",
+          "privilege": [
+            {
+              "privilege_id": 1,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/a",
+              "method": "get"
+            },
+            {
+              "privilege_id": 2,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/b",
+              "method": "post"
+            },
+            {
+              "privilege_id": 3,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/c",
+              "method": "export"
+            },
+            {"...": "..."}
+          ]
+        },
+        {
+          "privilege_group_key": "privilege_group_key",
+          "group_name": "privilege_group_name",
+          "privilege": [
+            {
+              "privilege_id": 1,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/a",
+              "method": "get"
+            },
+            {
+              "privilege_id": 2,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/b",
+              "method": "post"
+            },
+            {
+              "privilege_id": 3,
+              "privilege_name": "privilege_name",
+              "path": "/manager/privilege/c",
+              "method": "export"
+            },
+            {"...": "..."}
+          ]
+        }
+      ]
+    }
+  }
+}
 ```
+
 
 根据管理员ID，获取其所对应的所有权限信息。
 
 ### HTTP Request
 
-`GET http://example.com/kittens`
+`GET /privilege/user/{id}`
+
+### Content-type
+
+`application/json`
 
 ### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+请求参数 | 类型 | 必填? | 描述
+-------- | ---- | ----- | ----
+id | Int | true | 用户的ID
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+当传递参数有误,id为空或者用户已经被禁用等情况,返回值中result将为空.
 </aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/3"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Isis",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">If you're not using an administrator API key, note that some kittens will return 403 Forbidden if they are hidden for admins only.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the cat to retrieve
-
