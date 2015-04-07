@@ -118,7 +118,3 @@ search: true
 请求参数 | 类型 | 必填? | 描述
 -------- | ---- | ----- | ----
 id | Int | true | 用户的ID
-
-<aside class="notice">
-当传递参数有误,id为空或者用户已经被禁用等情况,返回值中result将为空.
-</aside>
